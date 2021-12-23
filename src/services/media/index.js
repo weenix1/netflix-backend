@@ -82,9 +82,9 @@ mediaRouter.get("/", async (req, res, next) => {
     console.log(req.body);
     const medias = await getMedias();
     console.log(medias);
-    if (req.query && req.query.title) {
+    if (req.query && req.query.s) {
       const filteredMedias = medias.filter(
-        (media) => media.title === req.query.title
+        (media) => media.title === req.query.s
       );
       res.send(filteredMedias);
     }
